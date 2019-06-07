@@ -1,7 +1,15 @@
 package com.qa.persistence.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Account {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String accountNumber;
 	private String firstName;
@@ -13,6 +21,9 @@ public class Account {
 		this.accountNumber = accountNumber;
 		this.firstName = firstName;
 		this.lastName = lastName;
+	}
+	public Account() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getId() {
